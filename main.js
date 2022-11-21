@@ -1,3 +1,32 @@
+// E2
+
+
+const boton = document.querySelector('#boton').addEventListener('click', captura );
+const h2 =document.querySelector('#name');
+const h3 =document.querySelector('#price');
+
+function captura() {
+    const ID = document.querySelector('#campo').value;
+    const IdNumber = parseInt (document.querySelector('#campo').value);
+    pizzas.forEach (element =>{
+      //console.log('valor ingresado',ID);
+      
+     if (IdNumber === element.id)
+               {h2.textContent = element.nombre; 
+               h3.textContent = element.precio;}
+     else if (ID=== '') 
+               {h2.textContent = 'ERROR'; 
+               h3.textContent = 'Ingrese un número del 1 al 6';}
+     else if (ID > element.id) 
+              {h2.textContent = 'ERROR'; 
+               h3.textContent = 'Ingrese un número del 1 al 6';}
+          })
+  }
+
+
+
+// E1
+
 const pizzas = [ 
 {
    id: 1,
@@ -52,7 +81,7 @@ const pizzaBaratas = pizzas.forEach((pizzas) => {
 
 // C) Todas las pizzas con su precio
 
-const listaPizzas = pizzas.map((lista) =>{
+const listaPizzas = pizzas.forEach((lista) =>{
     console.log(`La ${lista.nombre} cuesta $${lista.precio}` )})
 
 
